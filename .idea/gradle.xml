@@ -1,24 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="GradleMigrationSettings" migrationVersion="1" />
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
-        <option name="delegatedBuild" value="false" />
-        <option name="testRunner" value="GRADLE" />
-        <option name="distributionType" value="WRAPPED" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="/usr/local/Cellar/gradle/7.2/libexec" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/Bulls and Cows/task" />
-            <option value="$PROJECT_DIR$/Bulls and Cows/task/build/classes/java" />
-            <option value="$PROJECT_DIR$/Bulls and Cows/task/build/generated/sources/annotationProcessor/java" />
-            <option value="$PROJECT_DIR$/Bulls and Cows/task/build/generated/sources/headers/java" />
-            <option value="$PROJECT_DIR$/Bulls and Cows/task/build/reports/tests" />
-            <option value="$PROJECT_DIR$/Bulls and Cows/task/build/test-results" />
-            <option value="$PROJECT_DIR$/Bulls and Cows/task/build/tmp" />
-            <option value="$PROJECT_DIR$/util" />
+            <option value="$PROJECT_DIR$/BullsAndCows" />
           </set>
         </option>
       </GradleProjectSettings>
