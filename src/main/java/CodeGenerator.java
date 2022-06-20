@@ -23,6 +23,16 @@ public class CodeGenerator {
         return result;
     }
 
+    private Character generateUniqueChar(char c, char[] secretCode) {
+        int firstSymbol = 97;
+        int lastSymbol = 122;
+        char result;
+        do {
+            result = (char) (Math.random() * (lastSymbol - firstSymbol) + firstSymbol);
+        } while(result != c && contains(result, secretCode));
+        return result;
+    }
+
     public String getRawSecretCode(int codeLength, int possibleSymbols) {
         int leftLimit = 48; // numeral '0'
         int lastDigit = 57; // number '9'
@@ -42,7 +52,7 @@ public class CodeGenerator {
         return generatedString;
     }
 
-    public String setDigitsUnique(String secretCode) {
+    public String setUniqueChars(String secretCode) {
         char[] codeSplit = secretCode.toCharArray();
         for (int i = 0; i < codeSplit.length; i++) {
             if(Character.isDigit(codeSplit[i]) && (secretCode.indexOf(codeSplit[i]) != secretCode.lastIndexOf(codeSplit[i]))) {
@@ -54,16 +64,7 @@ public class CodeGenerator {
 
     public String getSecretCode(int codeLength, int numberOfSymbols) {
         String rawSecretCode = getRawSecretCode(codeLength, numberOfSymbols);
-        return setDigitsUnique(rawSecretCode);
+        return setUniqueChars(rawSecretCode);
     }
 
-    private Character generateUniqueChar(char c, char[] secretCode) {
-        int firstSymbol = 97;
-        int lastSymbol = 122;
-        char result;
-        do {
-            result = (char) (Math.random() * (lastSymbol - firstSymbol) + firstSymbol);
-        } while(result != c && contains(result, secretCode));
-        return result;
-    }
 }
