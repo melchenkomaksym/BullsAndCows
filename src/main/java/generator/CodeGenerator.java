@@ -1,7 +1,20 @@
+package generator;
+
 import java.util.Random;
+
+/**
+ * Generator of a secret code.
+ */
 
 public class CodeGenerator {
 
+    /**
+     * Transforms secret code with sequence of '*' symbols according to its size.
+     *
+     * @param codeLength secret code size
+     * @param startSymbol code of the starting symbol
+     * @param endSymbol code of the ending symbol
+     */
     private void printSecretCodePrepared(int codeLength, int startSymbol, int endSymbol) {
         StringBuilder sb = new StringBuilder("The secret is prepared: ");
         sb.append("*".repeat(Math.max(0, codeLength))).append(" (0-9");
@@ -11,6 +24,14 @@ public class CodeGenerator {
         sb.append(")");
         System.out.println(sb);
     }
+
+    /**
+     * Check if symbol is present in the array.
+     *
+     * @param c searched symbol
+     * @param arr an array where the symbol should be searched
+     * @return searching result
+     */
 
     private boolean contains(char c, char[] arr) {
         boolean result = false;
@@ -23,6 +44,13 @@ public class CodeGenerator {
         return result;
     }
 
+    /**
+     * Method is used to get rid of duplicates.
+     * @param c character
+     * @param secretCode raw secret code with possible duplicates
+     * @return secret code without duplicates
+     */
+
     private Character generateUniqueChar(char c, char[] secretCode) {
         int firstSymbol = 97;
         int lastSymbol = 122;
@@ -32,6 +60,14 @@ public class CodeGenerator {
         } while(result != c && contains(result, secretCode));
         return result;
     }
+
+    /**
+     * Method generates raw secret code. It can contain duplicates.
+     *
+     * @param codeLength length of the secret code
+     * @param possibleSymbols character code
+     * @return raw secret code
+     */
 
     public String getRawSecretCode(int codeLength, int possibleSymbols) {
         int leftLimit = 48; // numeral '0'

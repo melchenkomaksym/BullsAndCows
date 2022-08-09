@@ -1,3 +1,7 @@
+package controller;
+
+import generator.CodeGenerator;
+
 import java.util.Scanner;
 
 public class GameManager {
